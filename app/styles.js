@@ -6,8 +6,9 @@
 'use strict';
 
 import {Platform, StyleSheet} from 'react-native';
+import PixelRatio from 'PixelRatio';
 
-const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 25;
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 10 : 15;
 const HEADER_HEIGHT = Platform.OS === 'ios' ? 44 + STATUS_BAR_HEIGHT : 56 + STATUS_BAR_HEIGHT;
 
 const colors = {
@@ -32,8 +33,8 @@ const navBar = {
   },
   navText: {
     color: colors.white,
-    paddingTop: 15,
     fontSize: 20,
+    paddingTop: STATUS_BAR_HEIGHT,
   },
   navBackContainer: {
     flex: 1,
@@ -53,7 +54,7 @@ const text = {
   h1: {
     fontSize: 24,
     lineHeight: 27,
-    margin: 10,
+    marginLeft: 10,
     color: colors.darkText,
     fontWeight: 'bold',
     letterSpacing: -1,
@@ -75,20 +76,36 @@ const text = {
     margin: 10,
     color: colors.darkTeal
   },
+  past: {
+    opacity: 0.4,
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: 10,
+    paddingLeft: 15
   },
   instructions: {
     textAlign: 'center',
     color: colors.darkTeal,
     marginBottom: 5,
   },
+  dayScheduleContainer: {
+    paddingTop: 30,
+  },
   talkContainer: {
-    marginLeft: 15
+    paddingTop: 15,
+    paddingLeft: 15
+  },
+  bottomBorderDark: {
+    borderBottomColor: colors.darkText,
+    borderBottomWidth: 1 / PixelRatio.get(),
+  },
+  withTopMargin: {
+    marginTop: 20
   },
   ...navBar,
   ...text,

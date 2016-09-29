@@ -13,7 +13,17 @@ import NavBackButton from './NavBackButton';
 import styles from '../styles';
 import schedule from '../schedule';
 
+const pageTitle = 'Show and Tell';
+
 export default class ShowTellApp extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      viewTitle: pageTitle
+    };
+  }
 
   render() {
     const navigationBar = (
@@ -25,7 +35,12 @@ export default class ShowTellApp extends Component {
               return null;
             } else {
               return (
-                <TouchableOpacity style={styles.navBackContainer} onPress={() => navigator.pop()}>
+                <TouchableOpacity style={styles.navBackContainer} onPress={() => {
+                  navigator.pop();
+                  this.setState({
+                    viewTitle: pageTitle
+                  });
+                }}>
                   <NavBackButton style={styles.navBackButton} />
                 </TouchableOpacity>
               );
@@ -34,7 +49,7 @@ export default class ShowTellApp extends Component {
           RightButton: (route, navigator, index, navState) =>
             { return (<Text></Text>); },
           Title: (route, navigator, index, navState) =>
-            { return (<Text style={styles.navText}>Show and Tell</Text>); },
+            { return (<Text style={styles.navText}>{this.state.viewTitle}</Text>); },
         }}
         style={styles.nav}
       />
@@ -51,10 +66,14 @@ export default class ShowTellApp extends Component {
             {
               route.index === 0 ?
                 (<ScheduleList
-                  handleSchedulePress={(talk) => {
+                  handleSchedulePress={(talk, title) => {
                     if (route.index === 0) {
                       navigator.push({index: 1, schedule: talk});
                     }
+
+                    this.setState({
+                      viewTitle: title
+                    });
                   }}
                   navigator={navigator}
                   schedule={schedule}
