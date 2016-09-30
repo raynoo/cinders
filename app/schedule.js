@@ -1,81 +1,87 @@
 /**
  * @providesModule schedule
  * @flow
-*/
+ */
 
 'use strict';
 
 const schedule = [
   {
-    date: "09-21-2016",
+    date: "11/20/2016 12:30:00",
     talks: [
       {
-        title: "Title 1",
+        title: "Spicy jalapeno bacon ipsum dolor amet tenderloin",
         description: "description",
-        speaker: "Speaker"
+        speaker: "Speaker",
+        tags: ['tag'],
       },
       {
-        title: "Title 2",
+        title: "Chuck eiusmod id ex beef ribs ea elit adipisicing non",
+        description: "description",
+        speaker: "Speaker",
+        tags: ['tag'],
+      }
+    ]
+  },
+  {
+    date: "11/26/2016 12:30:00",
+    talks: [
+      {
+        title: "Meatball veniam sed beef ribs do filet mignon",
+        description: "description",
+        speaker: "Speaker",
+        tags: ['tag'],
+      },
+      {
+        title: "Lorem velit non doner flank landjaeger turkey picanha",
+        description: "description",
+        speaker: "Speaker",
+        tags: ['tag'],
+      }
+    ]
+  },
+  {
+    date: "09/25/2016 12:30:00",
+    talks: [
+      {
+        title: "Nulla lorem spare ribs magna biltong alcatra pig",
+        description: "description",
+        speaker: "Speaker",
+      },
+      {
+        title: "Nostrud id commodo",
         description: "description",
         speaker: "Speaker"
       }
     ]
   },
   {
-    date: "09-22-2016",
+    date: "09/24/2016 12:30:00",
     talks: [
       {
-        title: "Title 3",
+        title: "Incididunt dolore commodo, chicken et est pork chop",
         description: "description",
         speaker: "Speaker"
       },
       {
-        title: "Title 4",
+        title: "Magna laboris leberkas tail",
         description: "description",
         speaker: "Speaker"
       }
     ]
   },
   {
-    date: "09-23-2016",
+    date: "09/23/2016 12:30:00",
     talks: [
       {
-        title: "Title 3",
-        description: "description",
-        speaker: "Speaker"
+        title: "Deserunt tail dolor labore, prosciutto",
+        speaker: "Speaker",
+        tags: ['tag'],
       },
       {
-        title: "Title 4",
-        description: "description",
-        speaker: "Speaker"
-      }
-    ]
-  },
-  {
-    date: "09-24-2016",
-    talks: [
-      {
-        title: "Title 3",
-        description: "description",
-        speaker: "Speaker"
-      },
-      {
-        title: "Title 4",
-        description: "description",
-        speaker: "Speaker"
-      }
-    ]
-  },
-  {
-    date: "09-25-2016",
-    talks: [
-      {
-        title: "Title 3",
-        speaker: "Speaker"
-      },
-      {
-        title: "Title 4",
-        speaker: "Speaker"
+        title: "Elit elit",
+        speaker: "Speaker",
+        tags: ['tag'],
       }
     ]
   },
