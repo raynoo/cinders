@@ -1,6 +1,5 @@
 /**
  * @providesModule styles
- * @flow
 */
 
 'use strict';
@@ -9,7 +8,6 @@ import {Platform, StyleSheet} from 'react-native';
 import PixelRatio from 'PixelRatio';
 
 const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 10 : 15;
-const HEADER_HEIGHT = Platform.OS === 'ios' ? 44 + STATUS_BAR_HEIGHT : 56 + STATUS_BAR_HEIGHT;
 
 const colors = {
   actionText: '#3FB4CF',
@@ -18,9 +16,9 @@ const colors = {
   lightText: '#7F91A7',
   cellBorder: '#EEEEEE',
   darkBackground: '#183E63',
-  white: '#ECEFF1',
+  white: '#FFFFFF',
   darkTeal: '#006064',
-  lightGrey: '#f0eeea',
+  lightGrey: '#E6E6E6',
   darkGrey: '#333',
   trPurple: '#8F63F4',
   trGreen: '#59D389',
@@ -56,7 +54,8 @@ const navBar = {
 const text = {
   dateHeader: {
     fontSize: 15,
-    lineHeight: 27,
+    paddingTop: 5,
+    paddingBottom: 5,
     paddingLeft: 25,
     color: colors.darkText,
     fontWeight: 'bold',
@@ -89,26 +88,25 @@ const text = {
   },
   past: {
     opacity: 0.4,
+  },
+  resources: {
+    color: colors.trGreen,
+    fontWeight: 'bold',
   }
 };
 
 const tags = {
   tagsContainer: {
-    margin: 5,
+    marginLeft: 10,
     flexDirection: 'row',
   },
   tag: {
-    margin: 5,
-    fontSize: 10,
-    color: colors.darkTeal,
-    // padding: 3,
-    // borderRadius: 5,
-    // backgroundColor: colors.darkText,
-    // opacity: 0.6,
+    fontSize: 12,
+    color: colors.trPurple,
   },
 };
 
-const styles = StyleSheet.create({
+const common = {
   container: {
     flex: 1,
     backgroundColor: 'white',
@@ -119,9 +117,10 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   dayScheduleContainer: {
-    paddingTop: 10,
+    paddingTop: Platform.OS === 'ios' ? 8 : 0,
   },
   talkContainer: {
+    paddingTop: 8,
     paddingLeft: 15,
     paddingBottom: 15
   },
@@ -132,6 +131,10 @@ const styles = StyleSheet.create({
   withTopMargin: {
     marginTop: 20
   },
+};
+
+const styles = StyleSheet.create({
+  ...common,
   ...navBar,
   ...text,
   ...tags,

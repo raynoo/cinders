@@ -5,10 +5,14 @@ export default class NavBackButton extends Component {
 
   render() {
     return (
-      <Image style={this.props.style} source={require('../img/back_white@2x.android.png')} />
+      <Image style={this.props.style} source={backButtonImage} />
     );
   }
 }
+
+const backButtonImage = Platform.OS === 'ios' ?
+  require('../img/back_white@2x.ios.png') :
+  require('../img/back_white@2x.android.png');
 
 NavBackButton.PropTypes = {
   style: PropTypes.object
