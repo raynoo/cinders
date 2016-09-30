@@ -22,6 +22,9 @@ const colors = {
   darkTeal: '#006064',
   lightGrey: '#f0eeea',
   darkGrey: '#333',
+  trPurple: '#8F63F4',
+  trGreen: '#59D389',
+  trMineShaft: '#2e2a2b',
 };
 
 const navBar = {
@@ -29,7 +32,7 @@ const navBar = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.darkBackground,
+    backgroundColor: colors.trMineShaft,
   },
   navText: {
     color: colors.white,
@@ -51,6 +54,14 @@ const navBar = {
 };
 
 const text = {
+  dateHeader: {
+    fontSize: 15,
+    lineHeight: 27,
+    paddingLeft: 25,
+    color: colors.darkText,
+    fontWeight: 'bold',
+    backgroundColor: colors.lightGrey,
+  },
   h1: {
     fontSize: 24,
     lineHeight: 27,
@@ -79,14 +90,28 @@ const text = {
   past: {
     opacity: 0.4,
   }
-}
+};
+
+const tags = {
+  tagsContainer: {
+    margin: 5,
+    flexDirection: 'row',
+  },
+  tag: {
+    margin: 5,
+    fontSize: 10,
+    color: colors.darkTeal,
+    // padding: 3,
+    // borderRadius: 5,
+    // backgroundColor: colors.darkText,
+    // opacity: 0.6,
+  },
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
-    paddingTop: 10,
-    paddingLeft: 15
+    backgroundColor: 'white',
   },
   instructions: {
     textAlign: 'center',
@@ -94,13 +119,13 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   dayScheduleContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
   },
   talkContainer: {
-    paddingTop: 15,
-    paddingLeft: 15
+    paddingLeft: 15,
+    paddingBottom: 15
   },
-  bottomBorderDark: {
+  withBottomBorderDark: {
     borderBottomColor: colors.darkText,
     borderBottomWidth: 1 / PixelRatio.get(),
   },
@@ -109,6 +134,7 @@ const styles = StyleSheet.create({
   },
   ...navBar,
   ...text,
+  ...tags,
 });
 
 module.exports = styles;

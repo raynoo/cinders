@@ -24,13 +24,20 @@ export default class ScheduleList extends Component {
 
           return (
             <View style={talkDateClasses}>
-              <Text style={[styles.h1, styles.bottomBorderDark]}>{talkDateFormatted}</Text>
+              <Text style={[styles.dateHeader, styles.withBottomBorderDark]}>{talkDateFormatted}</Text>
               {
                 talksForDay.talks.map((talk, index) => { return (
                   <View key={index} style={styles.talkContainer}>
                     <TouchableOpacity onPress={() => this.props.handleSchedulePress(talk, talkDateFormatted)}>
                       <Text style={styles.h2}>{talk.title}</Text>
-                      <Text style={styles.p}>by {talk.speaker}</Text>
+                      <View style={styles.tagsContainer}>
+                        {
+                          talk.tags && talk.tags.map(
+                            (tag, index) => <Text key={index} style={styles.tag}>{tag.toUpperCase()}</Text>
+                          )
+                        }
+                        <Text style={styles.tag}> — {talk.speaker}</Text>
+                      </View>
                     </TouchableOpacity>
                   </View>
                 )})

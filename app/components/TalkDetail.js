@@ -9,7 +9,7 @@ export default class TalkDetail extends React.Component {
     const talk = this.props.talk;
 
     return (
-      <View style={styles.talkContainer}>
+      <View style={[styles.talkContainer, styles.withTopMargin]}>
         <Text style={styles.h2}>{talk.title}</Text>
         {/*talk.description && <Text style={styles.p}>{talk.description}</Text>*/}
         <Text style={styles.p}>by {talk.speaker}</Text>
